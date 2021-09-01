@@ -1,7 +1,6 @@
 FROM openjdk:8-jdk-alpine
 # VOLUME /tmp
 # ADD build/libs/test-app-0.1.0.jar app.jar
-ECHO dsd
 ARG NEXUS_USER
 ENV NEXUS_USER $NEXUS_USER
 EXPOSE 8080
