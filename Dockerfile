@@ -3,6 +3,7 @@ FROM openjdk:8-jdk-alpine
 # ADD build/libs/test-app-0.1.0.jar app.jar
 ARG NEXUS_USER
 echo $NEXUS_USER
+ENV NEXUS_USER $NEXUS_USER
 EXPOSE 8080
 EXPOSE 8081
 
