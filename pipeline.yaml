@@ -30,6 +30,7 @@
       "outputs": [
      {
           "deployment_resource": {
+            "mount_path": "k8s",
             "agent": "local_agent",
             "name": "ubuntu",
             "namespace": "default",
