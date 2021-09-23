@@ -1,5 +1,5 @@
 {
-  "name": "test-pipeline",
+  "name": "test",
   "steps": [
     {
       "name": "build",
