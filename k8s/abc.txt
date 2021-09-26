@@ -1,2 +1,2 @@
-Dummy pipeline3
+Dummy pipeline
 Testing k8s resource
