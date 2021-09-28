@@ -1,25 +1,54 @@
-name: test
-steps:
-  - name: build
-    type: BUILD
-    trigger: auto
-    params:
-      repository_type: git
-      revision: '121223234443434'
-      service_account: test-sa
-      images: zeromsi2/test-dev:1.0.0,klovercloud/test:1.0.0
-      args_from_configmaps: tekton/cm-test
-      arg: key1:value1,key2:value2
-    next:
-      - deployDev
-  - name: deployDev
-    type: DEPLOY
-    trigger: manual
-    params:
-      agent: local_agent
-      name: ubuntu
-      namespace: default
-      type: deployment
-      env: dev
-      images: 0:ubuntu
-    next: null
+{
+  "name": "test",
+  "steps": [
+    {
+      "name": "build",
+      "type": "BUILD",
+      "service_account": "test-sa",
+      "input": {
+        "type": "git"
+      },
+      "outputs": [
+        {
+          "type": "image",
+          "url": "zeromsi2/spring-boot-image:1.0.0",
+          "revision": "1.0.0"
+        }
+      ],
+      "arg": {
+        "configMaps": [
+          {
+            "name": "cm-test",
+            "namespace": "tekton"
+          }
+        ]
+      }
+    },
+    {
+      "name": "deploy",
+      "type": "DEPLOY",
+      "outputs": [
+     {
+          "deployment_resource": {
+            "mount_path": "k8s",
+            "agent": "local_agent",
+            "name": "ubuntu",
+            "namespace": "default",
+            "type": "deployment",
+            "replica": 2,
+            "images": [
+              {
+                "image_index": 0,
+                "image": "zeromsi2/spring-boot-image:1.0.0"
+              },
+              {
+                "image_index": 1,
+                "image": "ubuntu"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
