@@ -7,9 +7,9 @@ steps:
       repository_type: git
       revision: '121223234443434'
       service_account: test-sa
-      images: zeromsi2/test-dev:1.0.0,klovercloud/test:1.0.0
+      images: zeromsi2/test-dev:1.0.0,zeromsi2/test-pro:1.0.0
       args_from_configmaps: tekton/cm-test
-      arg: key1:value1,key2:value2
+      arg: key3:value1,key4:value2
     next:
       - deployDev
   - name: deployDev
