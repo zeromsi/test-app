@@ -14,7 +14,7 @@ steps:
       - deployDev
   - name: deployDev
     type: DEPLOY
-    trigger: manual
+    trigger: AUTO
     params:
       agent: local_agent
       name: ubuntu
