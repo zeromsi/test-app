@@ -21,5 +21,5 @@ steps:
       namespace: default
       type: deployment
       env: dev
-      images: 0:ubuntu
+      images: zeromsi2/test-dev:1.0.0
     next: null
