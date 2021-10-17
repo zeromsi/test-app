@@ -2,7 +2,7 @@ name: test
 steps:
   - name: build
     type: BUILD
-    trigger: auto
+    trigger: AUTO
     params:
       repository_type: git
       revision: '121223234443434'
