@@ -1,4 +1,4 @@
-name: test-pipelines
+name: test
 steps:
   - name: build
     type: BUILD
