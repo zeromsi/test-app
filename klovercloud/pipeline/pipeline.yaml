@@ -7,7 +7,7 @@ steps:
       repository_type: git
       revision: master
       service_account: test-sa
-      images: zeromsi2/test-dev:1.0.0,zeromsi2/test-pro:1.0.0
+      images: zeromsi2/test-dev,zeromsi2/test-pro
       args_from_configmaps: tekton/cm-test
       arg: key3:value1,key4:value2
     next:
@@ -21,5 +21,5 @@ steps:
       namespace: default
       type: deployment
       env: dev
-      images: zeromsi2/test-dev:1.0.0
+      images: zeromsi2/test-dev
     next: null
