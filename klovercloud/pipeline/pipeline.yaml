@@ -13,7 +13,7 @@ steps:
     next: 
       - intermediray_step
   - name: intermediray_step
-    type: INTERMEDIARY_STEP
+    type: INTERMEDIARY
     trigger: AUTO
     params:
       revision: master
