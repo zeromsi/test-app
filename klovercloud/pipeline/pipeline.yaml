@@ -9,7 +9,7 @@ steps:
       service_account: test-sa
       images: zeromsi2/test-dev,zeromsi2/test-pro
       args_from_configmaps: tekton/cm-test
-      arg: key3:value1,key4:value2
+      args: key3:value1,key4:value2
     next: 
       - intermediray_step
   - name: intermediray_step
@@ -21,7 +21,7 @@ steps:
       images: zeromsi2/test-dev,zeromsi2/test-pro
       envs_from_configmaps: tekton/cm-test
       envs_from_secrets: tekton/cm-test
-      env: key3:value1,key4:value2
+      envs: key3:value1,key4:value2
     next:
       - deployDev
   - name: deployDev
