@@ -11,7 +11,7 @@ steps:
       args_from_configmaps: tekton/cm-test
       args: key3:value1,key4:value2
     next: 
-      - intermediray_step
+      - interstep
   - name: interstep
     type: INTERMEDIARY
     trigger: AUTO
