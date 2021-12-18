@@ -12,7 +12,7 @@ steps:
       args: key3:value1,key4:value2
     next: 
       - intermediray_step
-  - name: intermediray_step
+  - name: interstep
     type: INTERMEDIARY
     trigger: AUTO
     params:
