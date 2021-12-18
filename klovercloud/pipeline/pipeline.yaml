@@ -36,4 +36,13 @@ steps:
       type: deployment
       env: dev
       images: zeromsi2/test-dev
+    next: 
+      - jenkinsJob
+  - name: jenkinsJob
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      url: http://localhost:8080
+      job: tekton
+      params: id:123,verbosity:high   
     next: null
