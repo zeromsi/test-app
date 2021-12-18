@@ -16,12 +16,14 @@ steps:
     type: INTERMEDIARY
     trigger: AUTO
     params:
-      revision: master
+      revision: latest
       service_account: test-sa
-      images: zeromsi2/test-dev,zeromsi2/test-pro
+      images: ubuntu
       envs_from_configmaps: tekton/cm-test
       envs_from_secrets: tekton/cm-test
       envs: key3:value1,key4:value2
+      command: echo
+      args: Hello World
     next:
       - deployDev
   - name: deployDev
