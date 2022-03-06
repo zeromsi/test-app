@@ -34,7 +34,7 @@ steps:
       name: ubuntu
       namespace: default
       type: deployment
-      revision: dev
+      revision: master
       env: dev
       images: zeromsi2/test-dev
     next: 
