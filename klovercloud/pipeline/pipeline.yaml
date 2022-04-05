@@ -35,6 +35,7 @@ steps:
       namespace: default
       type: deployment
       revision: master
+      trunk_based: enabled 
       env: dev
       images: zeromsi2/test-dev
     next: 
