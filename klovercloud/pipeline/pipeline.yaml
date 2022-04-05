@@ -5,7 +5,6 @@ steps:
     trigger: AUTO
     params:
       repository_type: git
-      revision: master
       service_account: test-sa
       images: zeromsi2/test-dev,zeromsi2/test-pro
       args_from_configmaps: tekton/cm-test
