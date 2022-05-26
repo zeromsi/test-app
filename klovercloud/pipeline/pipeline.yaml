@@ -34,7 +34,8 @@ steps:
       namespace: default
       type: deployment
       revision: master
-      trunk_based: enabled 
+      trunk_based: enabled
+      rollout_restart: true
       env: dev
       images: zeromsi2/test-dev
     next: 
