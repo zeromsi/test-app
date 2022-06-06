@@ -23,6 +23,7 @@ steps:
       envs: key3:value1,key4:value2
       command: echo
       command_args: Hello World
+      script: echo "Hello zeromsi" // script_from_configmap: tekton/script
     next:
       - deployDev
   - name: deployDev
