@@ -23,7 +23,7 @@ steps:
       envs: key3:value1,key4:value2
       command: echo
       command_args: Hello World
-      script: echo "Hello zeromsi" // script_from_configmap: tekton/script
+      script: echo "Hello zeromsi"
     next:
       - deployDev
   - name: deployDev
@@ -41,7 +41,7 @@ steps:
       images: zeromsi2/test-dev
     next: 
       - jenkinsJob
-  - name: jenkinsjob
+  - name: jenkins
     type: JENKINS_JOB
     trigger: AUTO
     params:
