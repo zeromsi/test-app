@@ -40,7 +40,7 @@ steps:
       env: dev
       images: zeromsi2/test-dev
     next: 
-      - jenkinsJob
+      - jenkins
   - name: jenkins
     type: JENKINS_JOB
     trigger: AUTO
