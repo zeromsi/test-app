@@ -15,6 +15,7 @@ steps:
     type: INTERMEDIARY
     trigger: AUTO
     params:
+      env: test
       revision: latest
       service_account: test-sa
       images: ubuntu
@@ -45,6 +46,7 @@ steps:
     type: JENKINS_JOB
     trigger: AUTO
     params:
+      env: edge
       url: http://jenkins.default.svc:8080
       job: new
       secret: jenkins-credentials
