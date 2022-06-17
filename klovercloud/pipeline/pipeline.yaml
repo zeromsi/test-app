@@ -57,7 +57,7 @@ steps:
     type: JENKINS_JOB
     trigger: AUTO
     params:
-      env: edge
+      env: edge2
       url: http://jenkins.default.svc:8080
       job: new
       secret: jenkins-credentials
