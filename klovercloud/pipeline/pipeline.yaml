@@ -62,4 +62,81 @@ steps:
       job: new
       secret: jenkins-credentials
       params: id:123,verbosity:high   
+    next: 
+     - jenkins2
+  - name: jenkins2
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge2
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
+    next:
+     - jenkins3
+  - name: jenkins3
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge3
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
+    next:
+     - jenkins4
+  - name: jenkins4
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge4
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
+    next:
+     - jenkins5
+     - jenkins6
+  - name: jenkins5
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge5
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
+    next:
+     - jenkins7
+  - name: jenkins6
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge6
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
+    next:
+     - jenkins8
+  - name: jenkins7
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge7
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
+    next: null
+  - name: jenkins8
+    type: JENKINS_JOB
+    trigger: AUTO
+    params:
+      env: edge8
+      url: http://jenkins.default.svc:8080
+      job: new
+      secret: jenkins-credentials
+      params: id:123,verbosity:high   
     next: null
