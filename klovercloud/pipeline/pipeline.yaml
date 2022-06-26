@@ -10,6 +10,7 @@ steps:
       args_from_configmaps: tekton/cm-test
       args: key3:value1,key4:value2
       allowed_branches: master,dev
+      revision: $BRANCH
     next: 
       - interstep
   - name: interstep
