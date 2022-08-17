@@ -27,6 +27,19 @@ steps:
       command_args: Hello World
       script: echo "Hello zeromsi"
     next:
+      - build2
+  - name: build2
+    type: BUILD
+    trigger: AUTO
+    params:
+      repository_type: git
+      service_account: test-sa
+      images: zeromsi2/test2,zeromsi2/test2-pro
+      args_from_configmaps: tekton/cm-test
+      args: key3:value1,key4:value2
+      url: https://github.com/zeromsi/trivago
+      revision: master
+    next: 
       - deployDev
   - name: deployDev
     type: DEPLOY
