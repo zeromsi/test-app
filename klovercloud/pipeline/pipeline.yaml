@@ -11,7 +11,6 @@ steps:
       images: zeromsi2/test-dev,zeromsi2/test-pro
       args_from_configmaps: tekton/cm-test
       args: key3:value1,key4:value2
-      allowed_branches: dev,master
     next: 
       - interstep
   - name: interstep
