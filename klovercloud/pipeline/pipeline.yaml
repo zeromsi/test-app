@@ -1,4 +1,6 @@
 name: test
+_metadata:
+    allowed_branches: dev,master
 steps:
   - name: build
     type: BUILD
